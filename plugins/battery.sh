@@ -1,39 +1,34 @@
 #!/bin/sh
 
-# Obtener el porcentaje de batería y estado de carga
 PERCENTAGE=$(pmset -g batt | grep -Eo "\d+%" | cut -d% -f1)
 CHARGING=$(pmset -g batt | grep 'AC Power')
 
-# Validar si el porcentaje es válido
 if [ -z "$PERCENTAGE" ]; then
   exit 0
 fi
 
-# Determinar el color según el nivel de batería
 if (( PERCENTAGE >= 40 )); then
-  COLOR="0xffb8bb26" # Verde
+  COLOR="0xffb8bb26" # Green
 elif (( PERCENTAGE >= 20 )); then
-  COLOR="0xfffabd2f" # Amarillo
+  COLOR="0xfffabd2f" # Yellow
 elif (( PERCENTAGE >= 15 )); then
-  COLOR="0xffffa500" # Naranja
+  COLOR="0xffffa500" # Orange
 else
-  COLOR="0xfffb4934" # Rojo
+  COLOR="0xfffb4934" # Red
 fi
 
-# Determinar el ícono según el nivel de batería
 if [[ "$CHARGING" != "" ]]; then
-  ICON="" # Ícono de carga
+  ICON=""
 elif (( PERCENTAGE >= 90 )); then
-  ICON="" # Batería llena
+  ICON=""
 elif (( PERCENTAGE >= 60 )); then
-  ICON="" # Batería 60-89%
+  ICON=""
 elif (( PERCENTAGE >= 30 )); then
-  ICON="" # Batería 30-59%
+  ICON=""
 elif (( PERCENTAGE >= 10 )); then
-  ICON="" # Batería 10-29%
+  ICON=""
 else
-  ICON="" # Batería crítica
+  ICON=""
 fi
 
-# Actualizar el elemento en SketchyBar
 sketchybar --set "$NAME" icon="$ICON" icon.color="$COLOR" label="${PERCENTAGE}%"
