@@ -52,13 +52,8 @@ sketchybar --add item space_separator left \
                                  label.drawing=off \
                                  background.drawing=off \
                                  script="$PLUGIN_DIR/space_windows.sh" \
-           --subscribe space_separator space_windows_change
-
-##### Adding Left Items #####
-# We add some regular items to the left side of the bar, where
-# only the properties deviating from the current defaults need to be set
-
-sketchybar --add item front_app left \
+           --subscribe space_separator space_windows_change \
+           --add item front_app left \
            --set front_app icon.drawing=on \
                           icon.font="sketchybar-app-font:Regular:16.0" \
                           script="$PLUGIN_DIR/front_app.sh" \
