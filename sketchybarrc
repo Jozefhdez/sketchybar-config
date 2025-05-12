@@ -97,11 +97,6 @@ sketchybar \
                       click_script="open https://github.com/jozefhdez" \
                       icon.highlight_color=0xff83a598 \
                       icon.highlight=on \
-  --add item settings right \
-           --set settings icon="" \
-                          icon.font="Hack Nerd Font:Bold:18.0" \
-                          label="Setup" \
-                          click_script="open -a 'System Settings'"
 
 
 ##### Force all scripts to run the first time (never do this in a script) #####
