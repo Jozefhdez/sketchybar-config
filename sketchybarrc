@@ -86,7 +86,7 @@ sketchybar \
   --subscribe battery system_woke power_source_change \
   --add item cpu right \
   --set cpu update_freq=10 icon= script="$PLUGIN_DIR/cpu.sh" \
-                 icon.color=0xff56949f \
+                 icon.color=0xff3e8fb0 \
   --add item media left \
            --set media script="$PLUGIN_DIR/media.sh" \
                        label.max_chars=23 \
