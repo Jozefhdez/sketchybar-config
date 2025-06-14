@@ -8,11 +8,11 @@ CPU_USER=$(echo "$CPU_INFO" | grep $(whoami) | sed "s/[^ 0-9\.]//g" | awk "{sum+
 CPU_PERCENT="$(echo "$CPU_SYS $CPU_USER" | awk '{printf "%.0f\n", ($1 + $2)*100}')"
 
 if (( CPU_PERCENT < 50 )); then
-  COLOR="0xff3e8fb0" # Blue
+  COLOR="0xff00ffff" # Electric Cyan
 elif (( CPU_PERCENT < 80 )); then
-  COLOR="0xfffabd2f" # Yellow
+  COLOR="0xffff2eff" # Neon Magenta
 else
-  COLOR="0xfffb4934" # Red
+  COLOR="0xfff9ff00" # Acid Yellow
 fi
 
 ICON=""

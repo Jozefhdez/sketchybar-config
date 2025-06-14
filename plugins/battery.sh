@@ -7,19 +7,19 @@ if [ -z "$PERCENTAGE" ]; then
   exit 0
 fi
 
-# Tonos azules
+# Paleta neón
 if (( PERCENTAGE >= 90 )); then
-  COLOR="0xff3e8fb0"
+  COLOR="0xff00ffff"   # Electric Cyan
 elif (( PERCENTAGE >= 70 )); then
-  COLOR="0xff5fa8d3"
+  COLOR="0xff00ffff"   # Electric Cyan
 elif (( PERCENTAGE >= 50 )); then
-  COLOR="0xff539ddb"
+  COLOR="0xff00ffff"   # Electric Cyan
 elif (( PERCENTAGE >= 30 )); then
-  COLOR="0xff457b9d"
+  COLOR="0xffff2eff"   # Neon Magenta
 elif (( PERCENTAGE >= 10 )); then
-  COLOR="0xff274472"
+  COLOR="0xfff9ff00"   # Acid Yellow
 else
-  COLOR="0xff1b263b"
+  COLOR="0xfff9ff00"   # Acid Yellow
 fi
 
 if [[ "$CHARGING" != "" ]]; then

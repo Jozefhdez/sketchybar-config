@@ -4,7 +4,8 @@ PLUGIN_DIR="$CONFIG_DIR/plugins"
 ##### Bar Appearance #####
 # Configuring the general appearance of the bar.
 
-sketchybar --bar position=top height=37 blur_radius=30 color=0x40fffaf3
+
+sketchybar --bar position=top height=37 blur_radius=30 color=0xcc0d0d0d
 
 ##### Changing Defaults #####
 # We now change some default values, which are applied to all further items.
@@ -14,8 +15,8 @@ default=(
   padding_right=8
   icon.font="Hack Nerd Font:Bold:17.0"
   label.font="Hack Nerd Font:Bold:14.0"
-  icon.color=0xffb4637a
-  label.color=0xff575279
+  icon.color=0xffe5e5e5
+  label.color=0xffe5e5e5
   icon.padding_left=10
   icon.padding_right=4
   label.padding_left=4
@@ -37,14 +38,14 @@ do
   sketchybar --add space space.$sid left \
              --set space.$sid space=$sid \
                               icon=$sid \
-                              background.color=0x40fffaf3 \
+                              background.color=0xff2b2e33 \
                               background.corner_radius=6 \
                               background.height=25 \
                               label.font="sketchybar-app-font:Regular:16.0" \
                               label.padding_right=20 \
                               label.y_offset=-1 \
-                              icon.color=0xff575279 \
-                              label.color=0xffb4637a \
+                              icon.color=0xff00ffff \
+                              label.color=0xffff2eff \
                               script="$PLUGIN_DIR/space.sh"
 done
 
@@ -53,13 +54,13 @@ sketchybar --add item space_separator left \
                                  icon.padding_left=4 \
                                  label.drawing=off \
                                  background.drawing=off \
-                                 icon.color=0xff575279 \
+                                 icon.color=0xff00ffff \
                                  script="$PLUGIN_DIR/space_windows.sh" \
            --subscribe space_separator space_windows_change \
            --add item front_app left \
            --set front_app icon.drawing=on \
                           icon.font="sketchybar-app-font:Regular:16.0" \
-                          icon.color=0xffd7827e \
+                          icon.color=0xffff2eff \
                           background.drawing=off \
                           script="$PLUGIN_DIR/front_app.sh" \
            --subscribe front_app front_app_switched \
@@ -67,44 +68,40 @@ sketchybar --add item space_separator left \
 ##### Adding Right Items #####
 # In the same way as the left items we can add items to the right side.
 
-# Some items refresh on a fixed cycle, e.g. the clock runs its script once
-# every 10s. Other items respond to events they subscribe to, e.g. the
-# volume.sh script is only executed once an actual change in system audio
-# volume is registered.
-
 sketchybar \
   --add item clock right \
   --set clock update_freq=10 icon= script="$PLUGIN_DIR/clock.sh" \
-                 icon.color=0xffb4637a \
+                 icon.color=0xff00ffff \
   --add item volume right \
   --set volume script="$PLUGIN_DIR/volume.sh" \
-                 icon.color=0xffb4637a \
+                 icon.color=0xff00ffff \
   --subscribe volume volume_change \
   --add item battery right \
   --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
-                 icon.color=0xffea9d34 \
+                 icon.color=0xfff9ff00 \
   --subscribe battery system_woke power_source_change \
   --add item cpu right \
   --set cpu update_freq=10 icon= script="$PLUGIN_DIR/cpu.sh" \
-                 icon.color=0xff3e8fb0 \
+                 icon.color=0xff00ffff \
+                 label.drawing=on \
   --add item media left \
            --set media script="$PLUGIN_DIR/media.sh" \
                        label.max_chars=23 \
                        icon.padding_left=0 \
                        scroll_texts=on \
                        icon=  \
-                       icon.color=0xffb4637a  \
-                       label.color=0xff575279  \
+                       icon.color=0xff00ffff  \
+                       label.color=0xffe5e5e5  \
                        background.drawing=off \
                        update_freq=5\
   --add item logo right \
            --set logo icon="󰊤" \
                       label="jozefhdez" \
                       label.drawing=on \
-                      icon.color=0xffd7827e  \
+                      icon.color=0xffff2eff  \
                       script="echo 'Loading'" \
                       click_script="open https://github.com/jozefhdez" \
-                      icon.highlight_color=0xffd7827e \
+                      icon.highlight_color=0xfff9ff00 \
                       icon.highlight=on \
 
 
