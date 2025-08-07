@@ -83,8 +83,7 @@ sketchybar \
                        icon.padding_left=0 \
                        scroll_texts=on \
                        icon=  \
-                       icon.color=0xff00ffff  \
-                       label.color=0xffe5e9f0  \
+                       icon.color=0xff81a1c1  \
                        background.drawing=off \
                        update_freq=5\
   --add item logo right \
