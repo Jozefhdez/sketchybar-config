@@ -1,22 +1,15 @@
 #!/bin/bash
 PLUGIN_DIR="$CONFIG_DIR/plugins"
 
-##### Bar Appearance #####
-# Configuring the general appearance of the bar.
-
-
-sketchybar --bar position=top height=37 blur_radius=30 color=0xcc0d0d0d
-
-##### Changing Defaults #####
-# We now change some default values, which are applied to all further items.
+sketchybar --bar position=top height=37 blur_radius=30 color=0xcc2e3440
 
 default=(
   padding_left=8
   padding_right=8
   icon.font="Hack Nerd Font:Bold:17.0"
   label.font="Hack Nerd Font:Bold:14.0"
-  icon.color=0xffe5e5e5
-  label.color=0xffe5e5e5
+  icon.color=0xff00ffff
+  label.color=0xffe5e9f0
   icon.padding_left=10
   icon.padding_right=4
   label.padding_left=4
@@ -38,14 +31,14 @@ do
   sketchybar --add space space.$sid left \
              --set space.$sid space=$sid \
                               icon=$sid \
-                              background.color=0xff2b2e33 \
+                              background.color=0xff434c5e \
                               background.corner_radius=6 \
                               background.height=25 \
                               label.font="sketchybar-app-font:Regular:16.0" \
                               label.padding_right=20 \
                               label.y_offset=-1 \
-                              icon.color=0xff00ffff \
-                              label.color=0xffff2eff \
+                              icon.color=0xff88c0d0 \
+                              label.color=0xff81a1c1 \
                               script="$PLUGIN_DIR/space.sh"
 done
 
@@ -54,13 +47,13 @@ sketchybar --add item space_separator left \
                                  icon.padding_left=4 \
                                  label.drawing=off \
                                  background.drawing=off \
-                                 icon.color=0xff00ffff \
+                                 icon.color=0xff88c0d0 \
                                  script="$PLUGIN_DIR/space_windows.sh" \
            --subscribe space_separator space_windows_change \
            --add item front_app left \
            --set front_app icon.drawing=on \
                           icon.font="sketchybar-app-font:Regular:16.0" \
-                          icon.color=0xffff2eff \
+                          icon.color=0xff81a1c1 \
                           background.drawing=off \
                           script="$PLUGIN_DIR/front_app.sh" \
            --subscribe front_app front_app_switched \
@@ -74,11 +67,11 @@ sketchybar \
                  icon.color=0xff00ffff \
   --add item volume right \
   --set volume script="$PLUGIN_DIR/volume.sh" \
-                 icon.color=0xff00ffff \
+                 icon.color=0xff88c0d0 \
   --subscribe volume volume_change \
   --add item battery right \
   --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
-                 icon.color=0xfff9ff00 \
+                 icon.color=0xffebcb8b \
   --subscribe battery system_woke power_source_change \
   --add item cpu right \
   --set cpu update_freq=10 icon= script="$PLUGIN_DIR/cpu.sh" \
@@ -91,17 +84,17 @@ sketchybar \
                        scroll_texts=on \
                        icon=  \
                        icon.color=0xff00ffff  \
-                       label.color=0xffe5e5e5  \
+                       label.color=0xffe5e9f0  \
                        background.drawing=off \
                        update_freq=5\
   --add item logo right \
            --set logo icon="󰊤" \
                       label="jozefhdez" \
                       label.drawing=on \
-                      icon.color=0xffff2eff  \
+                      icon.color=0xff81a1c1  \
                       script="echo 'Loading'" \
                       click_script="open https://github.com/jozefhdez" \
-                      icon.highlight_color=0xfff9ff00 \
+                      icon.highlight_color=0xffebcb8b \
                       icon.highlight=on \
 
 
