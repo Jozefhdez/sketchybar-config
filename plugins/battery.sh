@@ -7,19 +7,29 @@ if [ -z "$PERCENTAGE" ]; then
   exit 0
 fi
 
-# Paleta Nord
-if (( PERCENTAGE >= 90 )); then
-  COLOR="0xffa3be8c"   # Nord Green
-elif (( PERCENTAGE >= 70 )); then
-  COLOR="0xff88c0d0"   # Nord Frost Blue
-elif (( PERCENTAGE >= 50 )); then
-  COLOR="0xff88c0d0"   # Nord Frost Blue
-elif (( PERCENTAGE >= 30 )); then
-  COLOR="0xffd08770"   # Nord Orange
-elif (( PERCENTAGE >= 10 )); then
-  COLOR="0xffebcb8b"   # Nord Yellow
+# Paleta Nord extendida con transiciones más suaves
+if (( PERCENTAGE >= 95 )); then
+  COLOR="0xffa3be8c"   # Nord Green - Excelente
+elif (( PERCENTAGE >= 85 )); then
+  COLOR="0xff8fbcbb"   # Nord Cyan claro - Muy bueno
+elif (( PERCENTAGE >= 75 )); then
+  COLOR="0xff88c0d0"   # Nord Frost Blue - Bueno
+elif (( PERCENTAGE >= 65 )); then
+  COLOR="0xff81a1c1"   # Nord Blue medio - Bueno
+elif (( PERCENTAGE >= 55 )); then
+  COLOR="0xff5e81ac"   # Nord Blue oscuro - Moderado
+elif (( PERCENTAGE >= 45 )); then
+  COLOR="0xff81a1c1"   # Nord Blue medio - Moderado
+elif (( PERCENTAGE >= 35 )); then
+  COLOR="0xffebcb8b"   # Nord Yellow - Advertencia
+elif (( PERCENTAGE >= 25 )); then
+  COLOR="0xffd08770"   # Nord Orange - Precaución
+elif (( PERCENTAGE >= 15 )); then
+  COLOR="0xffbf616a"   # Nord Red suave - Bajo
+elif (( PERCENTAGE >= 5 )); then
+  COLOR="0xffb48ead"   # Nord Purple - Crítico
 else
-  COLOR="0xffbf616a"   # Nord Red
+  COLOR="0xff88c0d0"   # Nord Blue - Muy crítico (diferente del rojo para alertar)
 fi
 
 if [[ "$CHARGING" != "" ]]; then
