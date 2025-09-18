@@ -7,33 +7,32 @@ if [ -z "$PERCENTAGE" ]; then
   exit 0
 fi
 
-# Paleta Nord extendida con transiciones más suaves
+
 if (( PERCENTAGE >= 95 )); then
-  COLOR="0xffa3be8c"   # Nord Green - Excelente
+  COLOR="0xffa3be8c"
 elif (( PERCENTAGE >= 85 )); then
-  COLOR="0xff8fbcbb"   # Nord Cyan claro - Muy bueno
+  COLOR="0xff8fbcbb"
 elif (( PERCENTAGE >= 75 )); then
-  COLOR="0xff88c0d0"   # Nord Frost Blue - Bueno
+  COLOR="0xff88c0d0"
 elif (( PERCENTAGE >= 65 )); then
-  COLOR="0xff81a1c1"   # Nord Blue medio - Bueno
+  COLOR="0xff81a1c1"
 elif (( PERCENTAGE >= 55 )); then
-  COLOR="0xff5e81ac"   # Nord Blue oscuro - Moderado
+  COLOR="0xff5e81ac"
 elif (( PERCENTAGE >= 45 )); then
-  COLOR="0xff81a1c1"   # Nord Blue medio - Moderado
+  COLOR="0xff81a1c1"
 elif (( PERCENTAGE >= 35 )); then
-  COLOR="0xffebcb8b"   # Nord Yellow - Advertencia
+  COLOR="0xffebcb8b"
 elif (( PERCENTAGE >= 25 )); then
-  COLOR="0xffd08770"   # Nord Orange - Precaución
+  COLOR="0xffd08770"
 elif (( PERCENTAGE >= 15 )); then
-  COLOR="0xffbf616a"   # Nord Red suave - Bajo
+  COLOR="0xffbf616a"
 elif (( PERCENTAGE >= 5 )); then
-  COLOR="0xffb48ead"   # Nord Purple - Crítico
+  COLOR="0xffb48ead"
 else
-  COLOR="0xff88c0d0"   # Nord Blue - Muy crítico (diferente del rojo para alertar)
+  COLOR="0xff88c0d0"
 fi
 
 if [[ "$CHARGING" != "" ]]; then
-  # Iconos para cargando
   if (( PERCENTAGE >= 90 )); then
     ICON="󰂅"
   elif (( PERCENTAGE >= 80 )); then
@@ -56,7 +55,6 @@ if [[ "$CHARGING" != "" ]]; then
     ICON="󰢟"
   fi
 else
-  # Iconos para no cargando
   if (( PERCENTAGE >= 90 )); then
     ICON="󰁹"
   elif (( PERCENTAGE >= 80 )); then
