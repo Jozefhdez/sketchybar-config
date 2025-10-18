@@ -9,27 +9,27 @@ fi
 
 
 if (( PERCENTAGE >= 95 )); then
-  COLOR="0xffa3be8c"
+  COLOR="0xff00ff00"  # Verde brillante para batería llena
 elif (( PERCENTAGE >= 85 )); then
-  COLOR="0xff8fbcbb"
+  COLOR="0xff66ff66"  # Verde claro
 elif (( PERCENTAGE >= 75 )); then
-  COLOR="0xff88c0d0"
+  COLOR="0xff99ff99"  # Verde más claro
 elif (( PERCENTAGE >= 65 )); then
-  COLOR="0xff81a1c1"
+  COLOR="0xffccffcc"  # Verde muy claro
 elif (( PERCENTAGE >= 55 )); then
-  COLOR="0xff5e81ac"
+  COLOR="0xffffffff"  # Blanco
 elif (( PERCENTAGE >= 45 )); then
-  COLOR="0xff81a1c1"
+  COLOR="0xffffcc99"  # Amarillo muy claro
 elif (( PERCENTAGE >= 35 )); then
-  COLOR="0xffebcb8b"
+  COLOR="0xffff9900"  # Amarillo/naranja
 elif (( PERCENTAGE >= 25 )); then
-  COLOR="0xffd08770"
+  COLOR="0xffff6600"  # Naranja
 elif (( PERCENTAGE >= 15 )); then
-  COLOR="0xffbf616a"
+  COLOR="0xffff3300"  # Rojo/naranja
 elif (( PERCENTAGE >= 5 )); then
-  COLOR="0xffb48ead"
+  COLOR="0xffff0000"  # Rojo
 else
-  COLOR="0xff88c0d0"
+  COLOR="0xffaa0000"  # Rojo oscuro para batería crítica
 fi
 
 if [[ "$CHARGING" != "" ]]; then
